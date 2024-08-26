@@ -2,6 +2,7 @@ import Redis from 'ioredis';
 
 import ServerConfig from './serverConfig';
 
+                                          
 
 const redisConfig = {
     port: ServerConfig.REDIS_PORT,
