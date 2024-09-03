@@ -14,7 +14,7 @@ export default class SampleJob implements IJob {
         console.log(this.payload);
         
         if(job){
-            console.log(job.name, job.id, job.data);
+            // console.log(job.name, job.id, job.data);
             
         }
         
