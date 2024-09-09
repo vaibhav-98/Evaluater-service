@@ -15,7 +15,7 @@ export const createSubmissionZodSchems = z.object({
     problemId: z.string(),
     code: z.string(),
     languge: z.string(),
-});
+}).strict();
 
 
 
