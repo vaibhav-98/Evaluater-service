@@ -5,3 +5,5 @@ export const pingCheck = (_:Request,  res:Response) =>{
         message: "Ping check ok"
     });
 };
+
+
