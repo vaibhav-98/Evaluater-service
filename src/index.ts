@@ -29,9 +29,17 @@ app.listen(serverConfig.PORT, () => {
 //     location: "Remote | BLR | LKO"
 // }, 1);
 
-const code = `print("hello vaibhav)`;
+const code = `
+x = input()
+y = input()
+print("value of x is", x)
+print("value of y is", y)
+`;
 
-runPython(code);
+const inputCase = `100
+200`;               
+
+runPython(code, inputCase);
 
 });
 
