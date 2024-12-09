@@ -2,7 +2,8 @@ import bodyParser from 'body-parser';
 import express, { Express } from "express";
 
 import serverConfig from "./config/serverConfig";
-import runJava from './containers/runJavaDocker';
+import runCpp from './containers/runCpp';
+//import runJava from './containers/runJavaDocker';
 //import runPython from "./containers/runPythonDocker";
 // import sampleQueueProducer from "./producers/sampleQueueProducer";
 import apiRouter from "./routes";
@@ -41,23 +42,44 @@ app.listen(serverConfig.PORT, () => {
 // 200`;               
 
 // runPython(code, inputCase);
-const code = `
-import java.util.*;
-public class Main {
-    public static void main(String[] args) {
-        Scanner src = new Scanner(System.in);
-        int input = src.nextInt();
-        System.out.println("input value given by user: " + input);
-        for (int i = 0; i < input; i++) {
-            System.out.println(i);
-        }
+
+// const code = `
+// import java.util.*;
+// public class Main {
+//     public static void main(String[] args) {
+//         Scanner src = new Scanner(System.in);
+//         int input = src.nextInt();
+//         System.out.println("input value given by user: " + input);
+//         for (int i = 0; i < input; i++) {
+//             System.out.println(i);
+//         }
+//     }
+// }
+// `;
+
+// const inputCase = `10`;
+
+// runJava(code, inputCase);
+
+ const code = ` 
+    #include<iostream>
+    using namespace std;
+
+    int main () {
+     int x;
+     cin>>x;
+     cout<<"Value of x is "<<x<<" ";
+     for(int i =0; i < x; i++ ) {
+     cout<<i<< " ";
+     }
+     cout<<endl;
+     return 0;
     }
-}
-`;
+    `;
 
-const inputCase = `10`;
+     const inputCase = `10`;
 
-runJava(code, inputCase);
+ runCpp(code, inputCase);
 
 });
 
